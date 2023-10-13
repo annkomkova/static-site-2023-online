@@ -1,0 +1,71 @@
+#article {
+  background: var(--white);
+
+  article {
+    max-width: 1280px;
+    margin: 0 auto;
+    font-family: 'PT Root UI';
+  }
+  h1,
+  h2,
+  h3 {
+    font-weight: 700;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 36px;
+    margin-top: 30px;
+  }
+  h3 {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+  p,
+  li {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: 10px;
+    font-weight: 400;
+  }
+  p.lead {
+    width: 80%;
+    margin: 20px auto 0;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  blockquote {
+    background: var(--light);
+    padding: 20px;
+    margin-top: 20px;
+
+    p {
+      font-style: italic;
+    }
+    cite {
+      display: block;
+      margin-top: 16px;
+      text-align: center;
+      color: var(--medium);
+      font-weight: 300;
+    }
+  }
+  img {
+    width: 100%;
+    margin-top: 20px;
+  }
+  figcaption {
+    width: 80%;
+    margin: 8px auto 0;
+    text-align: center;
+    color: var(--medium);
+    font-weight: 300;
+  }
+}
