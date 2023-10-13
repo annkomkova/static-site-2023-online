@@ -11,3 +11,4 @@ yarn-error.log
 /dev_build/*.gif
 /dev_build/*.svg
 /dev_build/*/*.*
+static-site-online.code-workspace
