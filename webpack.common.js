@@ -112,6 +112,11 @@ module.exports = {
       filename: './spaceobjects.html'
     }),
 
+    new HtmlWebpackPlugin({
+      template: './src/simplegrid.html',
+      filename: './simplegrid.html'
+    }),
+
     // Article
     new HtmlWebpackPlugin({
       template: './src/spaceships/buran.html',
