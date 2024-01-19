@@ -8,7 +8,8 @@ const path = require('path')
 
 module.exports = {
   entry: {
-    index: './src/index.js'
+    index: './src/index.js',
+    dictionary: './src/dictionary.js'
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -87,45 +88,59 @@ module.exports = {
       chunkFilename: '[id].[contenthash].css'
     }),
 
+    // Chunk Dictionary
+    new HtmlWebpackPlugin({
+      template: './src/dictionary.html',
+      filename: './dictionary.html',
+      chunks: ['dictionary']
+    }),
     // Index
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      filename: './index.html'
+      filename: './index.html',
+      chunks: ['index']
     }),
     new HtmlWebpackPlugin({
       template: './src/about.html',
-      filename: './about.html'
+      filename: './about.html',
+      chunks: ['index']
     }),
     new HtmlWebpackPlugin({
       template: './src/html-css.html',
-      filename: './html-css.html'
+      filename: './html-css.html',
+      chunks: ['index']
     }),
 
     // Section
     new HtmlWebpackPlugin({
       template: './src/spaceships.html',
-      filename: './spaceships.html'
+      filename: './spaceships.html',
+      chunks: ['index']
     }),
 
     new HtmlWebpackPlugin({
       template: './src/spaceobjects.html',
-      filename: './spaceobjects.html'
+      filename: './spaceobjects.html',
+      chunks: ['index']
     }),
 
     new HtmlWebpackPlugin({
       template: './src/simplegrid.html',
-      filename: './simplegrid.html'
+      filename: './simplegrid.html',
+      chunks: ['index']
     }),
 
     // Article
     new HtmlWebpackPlugin({
       template: './src/spaceships/buran.html',
-      filename: './spaceships/buran.html'
+      filename: './spaceships/buran.html',
+      chunks: ['index']
     }),
 
     new HtmlWebpackPlugin({
       template: './src/spaceobjects/moon.html',
-      filename: './spaceobjects/moon.html'
+      filename: './spaceobjects/moon.html',
+      chunks: ['index']
     }),
 
     // Partials

@@ -1,0 +1,81 @@
+.A_ADCUser {
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: '';
+    width: 28px;
+    height: 28px;
+    background-image: url('./images/dictionary/Q_ADCSymbol.svg');
+  }
+  &::after {
+    content: '';
+    width: 36px;
+    height: 24px;
+    margin-left: 6px;
+    background-image: url('./images/dictionary/Q_ADCUserTexting.svg');
+  }
+}
+.A_Title {
+  height: 18px;
+  padding-top: 4px;
+  font-family: 'ADC';
+  font-size: 10px;
+  line-height: 14px;
+  color: white;
+  text-transform: uppercase;
+}
+.A_Question {
+  border-radius: 8px;
+  background-color: #1a1a1a;
+  color: #79ff39;
+  padding: 12px 18px;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1;
+}
+.A_AnswerMessage {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background-color: white;
+  font-weight: 400;
+  line-height: 116%;
+  font-size: 15px;
+}
+.O_Story {
+  position: relative;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 10px;
+  height: 568px;
+  padding: 52px 10px 22px 10px;
+
+  .A_Title {
+    position: absolute;
+    left: 44px;
+    top: 52px;
+  }
+
+  .A_Question {
+    align-self: flex-end;
+    margin-bottom: 10px;
+  }
+
+  .C_AnswerMessages {
+    width: 218px;
+    margin: 0 0 10px 34px;
+
+    .A_AnswerMessage {
+      margin-top: 10px;
+    }
+  }
+}
+.S_Stories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 1000px;
+  gap: 12px;
+  margin: 0 auto;
+}
