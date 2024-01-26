@@ -9,7 +9,8 @@ const path = require('path')
 module.exports = {
   entry: {
     index: './src/index.js',
-    dictionary: './src/dictionary.js'
+    dictionary: './src/dictionary.js',
+    jsbasic: './src/jsbasic.js'
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -88,6 +89,12 @@ module.exports = {
       chunkFilename: '[id].[contenthash].css'
     }),
 
+    // Chunk JS Basic
+    new HtmlWebpackPlugin({
+      template: './src/jsbasic.html',
+      filename: './jsbasic.html',
+      chunks: ['jsbasic']
+    }),
     // Chunk Dictionary
     new HtmlWebpackPlugin({
       template: './src/dictionary.html',

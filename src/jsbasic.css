@@ -1,0 +1,25 @@
+div {
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.red {
+  background-color: darkred;
+}
+.blue {
+  background-color: navy;
+}
+.gold {
+  background-color: goldenrod;
+}
+.green {
+  background-color: green;
+}
+.hidden {
+  opacity: 0;
+}
+.border {
+  border-radius: 100%;
+}
