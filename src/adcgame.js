@@ -36,13 +36,13 @@ function sample(array) {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-function showQuestion(question) {
+function showQuestion(wrapper, question) {
   removeListenerFromAnswer()
 
   const element = document.createElement('div')
   element.innerText = question
   element.classList.add('question')
-  document.body.appendChild(element)
+  wrapper.appendChild(element)
 }
 
 function removeListenerFromAnswer() {
@@ -55,27 +55,31 @@ function showQuestions() {
   const messages = sample(messageGroup)
   let timeout = 2000
 
+  const wrapper = document.createElement('div')
+  wrapper.classList.add('questionsWrapper')
+
   messages.questions.forEach((question, i) => {
     if (i == 0) {
-      showQuestion(question)
+      showQuestion(wrapper, question)
     } else if (i + 1 == messages.questions.length) {
       setTimeout(() => {
-        showQuestion(question)
+        showQuestion(wrapper, question)
         showAnswers(messages.answers)
       }, timeout)
     } else {
       setTimeout(() => {
-        showQuestion(question)
+        showQuestion(wrapper, question)
       }, timeout)
     }
     //  timeout = timeout + 2000
     timeout += 2000
   })
+  document.body.appendChild(wrapper)
 }
 
 function showAnswers(answers) {
   const wrapper = document.createElement('div')
-  wrapper.classList.add('answerWrapper')
+  wrapper.classList.add('answersWrapper')
   document.body.appendChild(wrapper)
 
   answers.forEach((answer, i) => {
