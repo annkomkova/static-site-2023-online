@@ -10,7 +10,8 @@ module.exports = {
   entry: {
     index: './src/index.js',
     dictionary: './src/dictionary.js',
-    jsbasic: './src/jsbasic.js'
+    jsbasic: './src/jsbasic.js',
+    adcgame: './src/adcgame.js'
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -89,6 +90,12 @@ module.exports = {
       chunkFilename: '[id].[contenthash].css'
     }),
 
+    // Chunk ADC game
+    new HtmlWebpackPlugin({
+      template: './src/adcgame.html',
+      filename: './adcgame.html',
+      chunks: ['adcgame']
+    }),
     // Chunk JS Basic
     new HtmlWebpackPlugin({
       template: './src/jsbasic.html',
