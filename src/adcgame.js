@@ -1,5 +1,6 @@
 import './adcgame.css'
 
+let eventListeners = []
 const messageGroup = [
   {
     questions: [
@@ -36,31 +37,21 @@ function sample(array) {
 }
 
 function showQuestion(question) {
+  removeListenerFromAnswer()
+
   const element = document.createElement('div')
   element.innerText = question
   element.classList.add('question')
   document.body.appendChild(element)
 }
 
-function showAnswers(answers) {
-  const wrapper = document.createElement('div')
-  wrapper.classList.add('answerWrapper')
-  document.body.appendChild(wrapper)
-
-  answers.forEach((answer, i) => {
-    const element = document.createElement('div')
-    element.innerText = answer
-    element.classList.add('answer')
-
-    element.addEventListener('click', () => {
-      console.log('клик работает!')
-    })
-
-    wrapper.appendChild(element)
+function removeListenerFromAnswer() {
+  eventListeners.forEach((element, i) => {
+    element.removeEventListener('click', showQuestions)
   })
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function showQuestions() {
   const messages = sample(messageGroup)
   let timeout = 2000
 
@@ -80,4 +71,25 @@ document.addEventListener('DOMContentLoaded', () => {
     //  timeout = timeout + 2000
     timeout += 2000
   })
+}
+
+function showAnswers(answers) {
+  const wrapper = document.createElement('div')
+  wrapper.classList.add('answerWrapper')
+  document.body.appendChild(wrapper)
+
+  answers.forEach((answer, i) => {
+    const element = document.createElement('div')
+    element.innerText = answer
+    element.classList.add('answer')
+
+    element.addEventListener('click', showQuestions)
+    eventListeners.push(element)
+
+    wrapper.appendChild(element)
+  })
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  showQuestions()
 })
