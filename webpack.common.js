@@ -97,6 +97,11 @@ module.exports = {
       filename: './select.html',
       chunks: ['select']
     }),
+    new HtmlWebpackPlugin({
+      template: './src/select2.html',
+      filename: './select2.html',
+      chunks: ['select']
+    }),
     // Chunk ADC game
     new HtmlWebpackPlugin({
       template: './src/adcgame.html',
