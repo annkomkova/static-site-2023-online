@@ -11,7 +11,8 @@ module.exports = {
     index: './src/index.js',
     dictionary: './src/dictionary.js',
     jsbasic: './src/jsbasic.js',
-    adcgame: './src/adcgame.js'
+    adcgame: './src/adcgame.js',
+    select: './src/select.js'
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -90,6 +91,12 @@ module.exports = {
       chunkFilename: '[id].[contenthash].css'
     }),
 
+    // Chunk select
+    new HtmlWebpackPlugin({
+      template: './src/select.html',
+      filename: './select.html',
+      chunks: ['select']
+    }),
     // Chunk ADC game
     new HtmlWebpackPlugin({
       template: './src/adcgame.html',
