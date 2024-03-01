@@ -136,6 +136,11 @@ module.exports = {
       filename: './html-css.html',
       chunks: ['index']
     }),
+    new HtmlWebpackPlugin({
+      template: './src/slider.html',
+      filename: './slider.html',
+      chunks: ['index']
+    }),
 
     // Section
     new HtmlWebpackPlugin({
