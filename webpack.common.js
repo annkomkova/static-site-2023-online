@@ -13,7 +13,8 @@ module.exports = {
     jsbasic: './src/jsbasic.js',
     adcgame: './src/adcgame.js',
     select: './src/select.js',
-    select2: './src/select2.js'
+    select2: './src/select2.js',
+    searchVanila: './src/searchVanila.js'
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -87,11 +88,37 @@ module.exports = {
     ]
   },
   plugins: [
+    // new CopyPlugin({
+    //   patterns: [
+    //     {
+    //       from: path.resolve(__dirname, 'src/share/'),
+    //       to: path.resolve(__dirname, 'dev_build/share')
+    //     },
+    //     {
+    //       from: path.resolve(__dirname, 'src/share/'),
+    //       to: path.resolve(__dirname, 'docs/share')
+    //     },
+    //     {
+    //       from: path.resolve(__dirname, 'src/images/colors/'),
+    //       to: path.resolve(__dirname, 'dev_build/images/colors')
+    //     },
+    //     {
+    //       from: path.resolve(__dirname, 'src/images/colors/'),
+    //       to: path.resolve(__dirname, 'docs/images/colors')
+    //     }
+    //   ]
+    // }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
       chunkFilename: '[id].[contenthash].css'
     }),
 
+    // Chunk search
+    new HtmlWebpackPlugin({
+      template: './src/searchVanila.html',
+      filename: './searchVanila.html',
+      chunks: ['searchVanila']
+    }),
     // Chunk select
     new HtmlWebpackPlugin({
       template: './src/select.html',
