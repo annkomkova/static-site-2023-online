@@ -1,0 +1,84 @@
+body {
+  font-family: 'PT Root UI';
+  font-weight: 400;
+  background-color: #2d2d2d;
+}
+.O_Search {
+  display: flex;
+  margin: 50px;
+  gap: 10px;
+}
+.A_SearchInput {
+  width: 250px;
+  border: 1px solid cornflowerblue;
+  border-radius: 0;
+
+  &:focus {
+    border-color: inherit;
+    box-shadow: none;
+    outline: none;
+  }
+}
+.A_Button {
+  padding: 10px 20px;
+  background-color: cornflowerblue;
+  color: white;
+  user-select: none;
+  cursor: pointer;
+
+  &:hover:not(.disable) {
+    background-color: darken(cornflowerblue, 10%);
+  }
+
+  &.disabled {
+    background-color: lightgray;
+    color: gray;
+    cursor: default;
+  }
+}
+.S_Content {
+  width: 100vw;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.O_ContentItem {
+  width: 320px;
+  min-height: 250px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+
+  .A_ContentItemCover {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+  }
+}
+.A_ContentItemTitle {
+  font-size: 21px;
+  line-height: 28px;
+  padding: 0 10px;
+}
+.A_ContentItemDescription {
+  font-size: 16px;
+  line-height: 22px;
+  padding: 0 10px;
+}
+.C_ContentItemTags {
+  padding: 0 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  .A_ContentItemTag {
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 6px 8px;
+    border-radius: 12px;
+  }
+}
